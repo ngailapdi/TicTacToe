@@ -1,4 +1,3 @@
-import java.util.*;
 public class AI {
 	public int minimax(Board currentBoard, int depth, int count) {
 		int score = currentBoard.evaluateAI();
@@ -6,8 +5,8 @@ public class AI {
 		if (!currentBoard.isNotFull()) return 0;
 		if (count % 2 == 1) {
 			int max = Integer.MIN_VALUE;
-			for (int i = 0; i < 3; i++) {
-				for (int j = 0; j < 3; j++) {
+			for (int i = 0; i < currentBoard.board.length; i++) {
+				for (int j = 0; j < currentBoard.board.length; j++) {
 					if (currentBoard.board[i][j] == 1 || currentBoard.board[i][j] == 2) {
 						continue;
 					}
@@ -19,8 +18,8 @@ public class AI {
 			return max;
 		} else {
 			int min = Integer.MAX_VALUE;
-			for (int i = 0; i < 3; i++) {
-				for (int j = 0; j < 3; j++) {
+			for (int i = 0; i < currentBoard.board.length; i++) {
+				for (int j = 0; j < currentBoard.board.length; j++) {
 					if (currentBoard.board[i][j] == 1 || currentBoard.board[i][j] == 2) {
 						continue;
 					}
@@ -35,8 +34,8 @@ public class AI {
 	public int[] generateNextMove(Board currentBoard) {
 		int minVal = Integer.MAX_VALUE;
 		int[] res = new int[2];
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
+		for (int i = 0; i < currentBoard.board.length; i++) {
+			for (int j = 0; j < currentBoard.board.length; j++) {
 				if (currentBoard.board[i][j] != 0) continue;
 				currentBoard.board[i][j] = 2;
 				int move = minimax(currentBoard, 0, 1);

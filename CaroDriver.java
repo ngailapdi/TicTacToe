@@ -1,6 +1,6 @@
 import java.util.*;
 public class CaroDriver {
-	Board b = new Board();
+	Board b = new Board(3);
 	Player player1;
 	Player player2;
 	static Scanner scan = new Scanner(System.in);
@@ -25,8 +25,8 @@ public class CaroDriver {
 	}
 	public void printBoard() {
 		int[][] board = b.getBoard();
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board.length; j++) {
 				System.out.print("|");
 				if (board[i][j] == 2) System.out.print("O");
 				else if (board[i][j] == 1) System.out.print("X");
