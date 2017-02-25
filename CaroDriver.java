@@ -11,11 +11,17 @@ public class CaroDriver {
 		System.out.println("Player 2, whats is your name?");
 		String name2 = scan.nextLine();
 		player2 = new Player(name2);
+		System.out.println("Please enter your move as follow:");
+		System.out.println("numberOfRow numberOfColumn");
+		System.out.println("Top row starts with 0 and most left column starts with 0");
 	}
 	public void setUp1Player() {
 		System.out.println("Player 1, what is your name?");
 		String name1 = scan.nextLine();
 		player1 = new Player(name1);
+		System.out.println("Please enter your move as follow:");
+		System.out.println("numberOfRow numberOfColumn");
+		System.out.println("Top row starts with 0 and most left column starts with 0");
 	}
 	public void printBoard() {
 		int[][] board = b.getBoard();
